@@ -1,5 +1,4 @@
-![Project Logo](https://github.com/hieuadoan/MEOW-ML/blob/main/MEOW-ML.png?raw=true)
-<img src="https://github.com/hieuadoan/MEOW-ML/blob/main/MEOW-ML.png" alt="Project Logo" width="200"/>
+<img src="https://github.com/hieuadoan/MEOW-ML/blob/main/MEOW-ML.png" alt="Project Logo" width="400"/>
 # MEOW-ML
 MEOW-ML is a playful yet powerful automated machine learning (AutoML) pipeline designed for materials science research. This project leverages traditional machine learning models, deep learning models, and Graph Neural Networks (GNNs) to provide an end-to-end solution for predicting material properties from various data formats, including `.csv`, `.xyz`, and `.cif` files.
 
@@ -41,6 +40,7 @@ python utils/explain_model.py
 ```
 
 ## Project structure
+```sh
 AutoML/
 │
 ├── configs/
@@ -65,4 +65,4 @@ AutoML/
 │   └── explain_model.py
 ├── main.py
 └── README.md
-
+```
