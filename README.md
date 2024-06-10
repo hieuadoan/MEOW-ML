@@ -1,6 +1,6 @@
 <img src="https://github.com/hieuadoan/MEOW-ML/blob/main/MEOW-ML.png" alt="Project Logo" width="400"/>
-# MEOW-ML
-MEOW-ML is a playful yet powerful automated machine learning (AutoML) pipeline designed for materials science research. This project leverages traditional machine learning models, deep learning models, and Graph Neural Networks (GNNs) to provide an end-to-end solution for predicting material properties from various data formats, including `.csv`, `.xyz`, and `.cif` files.
+
+**MEOW-ML** is a playful yet powerful automated machine learning (AutoML) pipeline designed for materials science research. This project leverages traditional machine learning models, deep learning models, and Graph Neural Networks (GNNs) to provide an end-to-end solution for predicting material properties from various data formats, including `.csv`, `.xyz`, and `.cif` files.
 
 ## Features
 
@@ -66,3 +66,6 @@ AutoML/
 ├── main.py
 └── README.md
 ```
+
+## Acknowledgements
+- This project uses Scikit-learn, Pytorch, Pytorch Geometric, Optuna, and SHAP.
