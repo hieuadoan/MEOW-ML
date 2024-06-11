@@ -28,6 +28,18 @@ Then, activate the environment:
 conda activate meow-ml
 ```
 
+Get site-packages directory
+```sh
+SP_DIR=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
+```
+
+Create the .path file to set the project folder
+```sh
+echo "/path/to/your/project" > "$SP_DIR/my_project.pth"
+```
+
+Replace the /path/to/your/project with the path to your project.
+
 ## Usage
 1. **Prepare data**: Ensure data is in one of the supported formats (.csv, .xyz, .cif) and update the configs/config.yaml file with the appropriate file path and settings.
 
