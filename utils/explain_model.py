@@ -9,4 +9,4 @@ def explain_model(model, X_train, X_test, feature_names):
         explainer = shap.Explainer(model, X_train)
         shap_values = explainer(X_test)
 
-    shap.summary_plot(shap_values, X_test, feature_names=feature_names)
+    shap.summary_plot(shap_values, X_test, feature_names=feature_names, plot_type='dot')
