@@ -1,0 +1,16 @@
+name: meow-ml
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pandas
+  - scikit-learn
+  - numpy
+  - pytorch
+  - pyg
+  - optuna
+  - shap
+  - pymatgen
+  - ase
+  - pyyaml
