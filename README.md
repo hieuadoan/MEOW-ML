@@ -35,10 +35,10 @@ SP_DIR=$(python -c "from distutils.sysconfig import get_python_lib; print(get_py
 
 Create the .path file to set the project folder
 ```sh
-echo "/path/to/your/project" > "$SP_DIR/my_project.pth"
+echo "/path/to/your/project" > "$SP_DIR/meow-ml.pth"
 ```
 
-Replace the /path/to/your/project with the path to your project.
+Replace the /path/to/your/project with the path to the cloned MEOW-ML directory.
 
 ## Usage
 1. **Prepare data**: Ensure data is in one of the supported formats (.csv, .xyz, .cif) and update the configs/config.yaml file with the appropriate file path and settings.
