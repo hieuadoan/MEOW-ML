@@ -84,11 +84,14 @@ MEOW-ML/
 │   └── tuner.py
 ├── utils/
 │   ├── __init__.py
+│   ├── load_config.py
+│   ├── make_callable_models.py
 │   └── explain_model.py
 ├── main.py
 ├── environment.yml
+├── environment-gpu.yml
 └── README.md
 ```
 
 ## Acknowledgements
-- This project uses Scikit-learn, Pytorch, Pytorch Geometric, Optuna, and SHAP.
+- This project uses Scikit-learn, Pytorch, Pytorch Geometric, Optuna, ASE, Pymatgen and SHAP.
