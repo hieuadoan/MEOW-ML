@@ -1,5 +1,5 @@
 <!-- Include logo -->
-<p aling="center">
+<p align="center">
 <img src="https://github.com/hieuadoan/MEOW-ML/blob/main/MEOW-ML.png" alt="Project Logo" width="400"/>
 </p>
 
@@ -44,7 +44,7 @@ python utils/explain_model.py
 
 ## Project structure
 ```sh
-AutoML/
+MEOW-ML/
 │
 ├── configs/
 │   └── config.yaml
