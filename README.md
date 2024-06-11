@@ -1,6 +1,9 @@
+<!-- Include logo -->
+<p aling="center">
 <img src="https://github.com/hieuadoan/MEOW-ML/blob/main/MEOW-ML.png" alt="Project Logo" width="400"/>
+</p>
 
-**MEOW-ML** is a playful yet powerful automated machine learning (AutoML) pipeline designed for materials science research. This project leverages traditional machine learning models, deep learning models, and Graph Neural Networks (GNNs) to provide an end-to-end solution for predicting material properties from various data formats, including `.csv`, `.xyz`, and `.cif` files.
+**MEOW-ML** (Materials Evaluation and Optimization Workflow with Machine Learning) is a playful yet powerful automated machine learning (AutoML) pipeline designed for materials science research. This project leverages traditional machine learning models, deep learning models, and Graph Neural Networks (GNNs) to provide an end-to-end solution for predicting material properties from various data formats, including `.csv`, `.xyz`, and `.cif` files.
 
 ## Features
 
