@@ -20,6 +20,7 @@ To create the environment and install the dependencies, run:
 ```sh
 conda env create -f environment.yml
 ```
+<u>Note</u>: Replace *environment.yml* with *environment-gpu.yml* if you can run CUDA-enabled PyTorch.
 
 Then, activate the environment:
 
