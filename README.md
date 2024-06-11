@@ -15,10 +15,16 @@
 
 ## Installation
 
-To install the required dependencies, run:
+To create the environment and install the dependencies, run:
 
 ```sh
-pip install -r requirements.txt
+conda env create -f environment.yml
+```
+
+Then, activate the environment:
+
+```sh
+conda activate meow-ml
 ```
 
 ## Usage
