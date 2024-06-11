@@ -28,21 +28,21 @@ conda activate meow-ml
 ```
 
 ## Usage
-1. **Prepare your data**: Ensure your data is in one of the supported formats (.csv, .xyz, .cif) and update the configs/config.yaml file with the appropriate file path and settings.
+1. **Prepare data**: Ensure data is in one of the supported formats (.csv, .xyz, .cif) and update the configs/config.yaml file with the appropriate file path and settings.
 
-2. **Run Hyperparameter Tuning**: Optimize hyperparameters for the best model performance.
+2. **Run hyperparameter tuning**: Optimize hyperparameters for the best model performance.
 
 ```sh
 python hyperparameter_tuning/tuner.py
 ```
 
-3. **Train and Evaluate Models**: Train and evaluate the models using the best hyperparameters.
+3. **Train and evaluate models**: Train and evaluate the models using the best hyperparameters.
 
 ```sh
 python main.py
 ```
 
-4. **Explain Model Predictions**: Generate explanations for model predictions to gain insights into feature importance.
+4. **Explain model predictions**: Generate explanations for model predictions to gain insights into feature importance.
 
 ```
 python utils/explain_model.py
