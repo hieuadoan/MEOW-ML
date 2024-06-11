@@ -73,6 +73,7 @@ MEOW-ML/
 │   ├── __init__.py
 │   └── explain_model.py
 ├── main.py
+├── environment.yml
 └── README.md
 ```
 
