@@ -1,7 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from pymatgen.core import Structure
 from pymatgen.io.cif import CifParser
 import ase.io
 import yaml
