@@ -1,5 +1,5 @@
 data:
-  file_path: 'data/materials_data.csv'
+  file_path: 'data/dummy.csv'
   file_type: 'csv'  # Options: 'csv', 'xyz', 'cif'
   test_size: 0.2
   random_state: 42
@@ -17,14 +17,14 @@ models:
       enabled: true
       n_estimators: 100
     svr:
-      enabled: true
+      enabled: false
   neural_network:
-    enabled: true
+    enabled: false
     layers: [128, 64]
     activation: 'relu'
     optimizer: 'adam'
   gnn:
-    enabled: true
+    enabled: false
     layers: [128, 64]
     activation: 'relu'
     optimizer: 'adam'
