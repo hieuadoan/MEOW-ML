@@ -1,10 +1,20 @@
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.svm import SVR
-import torch
-import torch.nn as nn
+from torch import nn
+from torch.nn import functional as F
 
 def get_traditional_models(config):
+    """
+    Returns a dictionary of traditional machine learning models based on the provided configuration.
+
+    Parameters:
+    - config (dict): A dictionary containing the configuration settings for the models.
+
+    Returns:
+    - models (dict): A dictionary where the keys are the model names and the values are the corresponding model objects.
+    """
+
     models = {}
     if config['models']['traditional']['linear_regression']['enabled']:
         models['Linear Regression'] = LinearRegression()
@@ -15,6 +25,18 @@ def get_traditional_models(config):
     return models
 
 class SimpleNN(nn.Module):
+    """
+    A simple neural network model.
+
+    Args:
+        input_dim (int): The input dimension of the network.
+        layers (list): A list of integers representing the number of units in each layer.
+
+    Attributes:
+        layers (nn.ModuleList): A list of linear layers in the network.
+
+    """
+
     def __init__(self, input_dim, layers):
         super(SimpleNN, self).__init__()
         self.layers = nn.ModuleList()
@@ -24,11 +46,30 @@ class SimpleNN(nn.Module):
         self.layers.append(nn.Linear(layers[-1], 1))
         
     def forward(self, x):
-        for layer in self.layers[:-1]:
-            x = torch.relu(layer(x))
-        x = self.layers[-1](x)
-        return x
+            """
+            Forward pass of the model.
 
-def get_neural_network(config, input_dim):
+            Args:
+                x (torch.Tensor): Input tensor.
+
+            Returns:
+                torch.Tensor: Output tensor.
+            """
+            for layer in self.layers[:-1]:
+                x = F.relu(layer(x))
+            x = self.layers[-1](x)
+            return x
+
+def get_neural_network(config, input_dim) -> SimpleNN:
+    """
+    Create a neural network model based on the given configuration and input dimension.
+
+    Args:
+        config (dict): The configuration dictionary containing model parameters.
+        input_dim (int): The dimension of the input data.
+
+    Returns:
+        SimpleNN: The created neural network model.
+    """
     layers = config['models']['neural_network']['layers']
     return SimpleNN(input_dim, layers)

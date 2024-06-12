@@ -11,6 +11,16 @@ def load_config():
     return config
 
 def load_and_preprocess_data():
+    """
+    Load and preprocess data based on the specified file type in the configuration.
+    
+    Returns:
+        X_train_scaled (numpy.ndarray): Scaled training features.
+        X_test_scaled (numpy.ndarray): Scaled testing features.
+        y_train (pandas.Series): Training target.
+        y_test (pandas.Series): Testing target.
+        feature_columns (pandas.Index): Column names of the features.
+    """
     config = load_config()
     file_path = config['data']['file_path']
     file_type = config['data']['file_type']
