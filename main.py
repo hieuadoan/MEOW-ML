@@ -1,8 +1,8 @@
 from data.data_preparation import load_and_preprocess_data
-from models.train_evaluate import train_traditional_model, train_simple_nn
+from models.train_evaluate import train_simple_nn
 from models.model_definitions import get_neural_network
 from gnn_models.gnn_definitions import get_gnn_model
-from gnn_models.train_gnn import train_gnn_model, evaluate_gnn_model
+from gnn_models.train_gnn import train_gnn_model
 from hyperparameter_tuning.tuner import tune_hyperparameters
 from utils.explain_model import explain_model
 from utils.load_config import load_config
@@ -13,6 +13,7 @@ from utils.make_callable_models import CallableModel
 from utils.get_enabled_model_types import get_enabled_model_types
 from utils.get_dataset_name import get_dataset_name
 from torch import nn, optim
+import torch
 import json
 import os
 
@@ -61,14 +62,15 @@ if __name__ == "__main__":
         lr = best_params['lr']
         optimizer = getattr(optim, optimizer_name)(model.parameters(), lr=lr)
         criterion = nn.MSELoss()
-        model, predictions, mae = train_gnn_model(config, X_train, y_train, X_test, y_test, model, optimizer, criterion)
+        model, predictions, mae = train_gnn_model(config, X_train, y_train, X_test, y_test, optimizer, criterion)
     else:
         raise ValueError(f'Unsupported model type: {model_type}')
     
     # Fit the model
     if model_type in ['linear_regression', 'random_forest', 'svr']:
         model.fit(X_train, y_train)
+        
     elif model_type in ['neural_network', 'gnn']:
-        model.eval()
+        model.to('cpu')  # Move model to CPU for SHAP explanation, incase it was trained on GPU
     
     explain_model(model, X_train, X_test, feature_names)
