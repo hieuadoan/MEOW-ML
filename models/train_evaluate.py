@@ -2,6 +2,10 @@ from sklearn.metrics import mean_absolute_error
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.svm import SVR
+from .model_definitions import get_neural_network
 
 def train_traditional_model(model, X_train, y_train, X_test, y_test):
     model.fit(X_train, y_train)
@@ -9,11 +13,11 @@ def train_traditional_model(model, X_train, y_train, X_test, y_test):
     mae = mean_absolute_error(y_test, predictions)
     return model, predictions, mae
 
-def train_simple_nn(config, X_train, y_train, X_test, y_test):
+def train_simple_nn(config, X_train, y_train, X_test, y_test, optimizer, criterion):
     input_dim = X_train.shape[1]
     model = get_neural_network(config, input_dim)
-    criterion = nn.MSELoss()
-    optimizer = optim.Adam(model.parameters(), lr=config['training']['learning_rate'])
+    #criterion = nn.MSELoss()
+    #optimizer = optim.Adam(model.parameters(), lr=config['training']['learning_rate'])
 
     X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
     y_train_tensor = torch.tensor(y_train.values, dtype=torch.float32).view(-1, 1)
