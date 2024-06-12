@@ -12,14 +12,14 @@ training:
 models:
   traditional:
     linear_regression:
-      enabled: true
+      enabled: false
     random_forest:
-      enabled: true
+      enabled: false
       n_estimators: 100
     svr:
-      enabled: true
+      enabled: false
   neural_network:
-    enabled: false
+    enabled: true
     layers: [128, 64]
     activation: 'relu'
     optimizer: 'adam'
@@ -31,4 +31,4 @@ models:
 
 hyperparameters:
   search:
-    max_evals: 50
+    max_trials: 100
